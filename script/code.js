@@ -8,7 +8,7 @@ function addTask() {
   if (taskText !== '') {
     let li = document.createElement('li');
     li.textContent = taskText;
-    
+
     // Add a button to remove the task
     let removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
@@ -16,15 +16,14 @@ function addTask() {
       li.remove();
     });
 
-    li.appendChild(removeButton);
-    taskList.appendChild(li);
+    li.append(removeButton);
+    taskList.append(li);
 
-    // Clear the input field
+    // Clearing the input field
     newTaskInput.value = '';
   }
 }
 
-// Listen for Enter key press to add a task
 newTaskInput.addEventListener('keyup', (event) => {
   if (event.key === 'Enter') {
     addTask();
